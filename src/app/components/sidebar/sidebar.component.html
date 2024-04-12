@@ -1,0 +1,49 @@
+<div class="d-flex">
+    <div
+      class="sidebar"
+      [ngClass]="sidebar.collapsedSidebar ? 'collapsed-sidebar' : ''"
+      [ngStyle]="{ 'margin-left': sidebar.hideSideNav ? '-100%' : '0' }"
+    >
+      <div class="text-center">
+        <div class="logo">
+          <img
+            class="logo-img"
+            [width]="sidebar.collapsedSidebar ? '40' : '120'"
+            src="../../../assets/img/avengers.png"
+          />
+          <p>v 1.2.3</p>
+        </div>
+      </div>
+      <fa-icon
+        (click)="sidebar.hideSideNav = true"
+        class="close-sidebar"
+        [icon]="closeIcon"
+      ></fa-icon>
+      <ul class="list-menu">
+        <div class="mb-4 itens-menu" *ngFor="let item of showPages(); let i = index">
+          <button
+            *ngFor="let page of item.pages; let i = index"
+            [attr.data-cy]="'menu-link-' + i"
+            [routerLink]="page.path "
+            class="button-cleared"
+          >
+            <li class="list-item" [routerLinkActive]="['active']">
+              <fa-icon [icon]="page.icon"></fa-icon>
+              <p class="title-page">{{ page.title }}</p>
+            </li>
+          </button>
+        </div>
+  
+      </ul>
+  
+    </div>
+  
+    <div class="main-content">
+      <app-header 
+        [title]="'Dashboard'"
+      ></app-header>
+  
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  
