@@ -1,0 +1,106 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--background);
+    margin-bottom: 20px;
+  
+    .toggle:after {
+      content: '|';
+      color: var(--secondary-opacity);
+    }
+  
+    .company-name {
+      font-size: 10px;
+      background: rgb(90 180 88 / 20%);
+      padding: 4px 11px;
+      font-weight: bold;
+      border-radius: 30px;
+      color: var(--primary-solid);
+    }
+  
+    h1 {
+      color: var(--secondary-solid);
+    }
+  
+    .icon-page {
+      color: var(--primary-solid);
+      width: 30px;
+    }
+  
+    .collapse-menu {
+      cursor: pointer;
+      display: none;
+      color: var(--primary-solid);
+    }
+  
+    .sign {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: var(--secondary-solid);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  
+      p {
+        font-size: 12px;
+      }
+    }
+  
+    .dropdown {
+      cursor: pointer;
+    }
+  
+    .dropdown-item:hover,
+    .dropdown-item:focus {
+      background-color: var(--white) !important;
+    }
+  
+    .dropdown-menu li {
+      background-color: var(--white);
+      border-bottom: 1px solid var(--background);
+  
+      &:hover {
+        opacity: .9;
+      }
+  
+      > a {
+        color: var(--secondary-solid);
+      }
+    }
+  }
+  
+  .theme-icon {
+    width: 16px;
+    cursor: pointer;
+  }
+  
+  .dark-icon {
+    position: absolute;
+    top: 4px;
+    right: 26px;
+  }
+  
+  .sun-icon {
+    position: absolute;
+    top: 4px;
+    left: 8px;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .header {
+      .collapse-menu {
+        display: block;
+      }
+  
+      .icon-page {
+        display: none;
+      }
+  
+      h1 {
+        font-size: 18px !important;
+      }
+    }
+  }
+  
