@@ -1,6 +1,6 @@
 .sidebar {
   width: 280px;
-  background-color: var(--white);
+  background-color: var(--danger-solid);
   box-shadow: 5px 0 20px rgb(0 0 0 / 2%);
   transition: all 0.3s linear;
   height: 100vh;
@@ -17,12 +17,13 @@
 
     p {
       font-size: 12px;
-      color: var(--greyish-blue);
+      font-weight: bold;
+      color: var(--white);
     }
   }
   
   .logo-img {
-    width: 25vh;
+    width: 40vh;
   }
 }
 
@@ -30,7 +31,7 @@
   font-size: 12px;
   padding: 6px 0 6px 24px;
   font-weight: bold;
-  color: var(--tertiary-solid);
+  color: var(--black);
   transition: all .3s linear;
 }
 
@@ -121,18 +122,18 @@ fa-icon,
 
   fa-icon,
   p {
-    color: var(--tertiary-solid);
+    color: var(--black);
   }
 
   &.active {
-    background-color: rgba(var(--primary), 0.1);
+    background-color: rgba( #ffffff, 0.5) !important;
 
     p {
-      color: var(--primary-solid);
+      color: var(--white);
     }
 
     fa-icon {
-      color: var(--primary-solid);
+      color: var(--white);
     }
   }
 }
@@ -144,7 +145,7 @@ fa-icon,
   top: 0;
   width: 7px;
   height: 100%;
-  background-color: var(--primary-solid);
+  background-color: var(--white);
 }
 
 .list-settings {

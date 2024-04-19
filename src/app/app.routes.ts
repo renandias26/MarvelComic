@@ -17,6 +17,11 @@ export const routes: Routes = [
     {
     path: 'comics',
     component: ComicsComponent
+    },
+    {
+    path: '',
+    redirectTo: '/creators',
+    pathMatch: 'full'
     }
 
 ];
