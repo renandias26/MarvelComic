@@ -1,0 +1,41 @@
+<label [for]="id">{{ label }} <span *ngIf="isRequired" class="required">*</span></label>
+<fa-icon
+  *ngIf="labelToolTipText !== ''"
+[matTooltip]="labelToolTipText"
+  class="ms-2 text-warning"
+  [icon]="faInfoCircle"
+>
+</fa-icon>
+<div class="position-relative d-flex justify-content-center align-items-center"
+[ngClass]="searchIcon ? 'searchIcon' : ''">
+  <fa-icon
+  *ngIf="searchIcon"
+  [matTooltip]="labelToolTipText"
+  [ngStyle]="{ 'background-color': 'var(--border)' }"
+  [icon]="faSearch"
+>
+</fa-icon>
+  <input
+    viewChild
+    [attr.data-cy]="dataCy"
+    [id]="id"
+    [maxlength]="maxLengthInput!"
+    [name]="name"
+    [placeholder]="placeholder"
+    [(ngModel)]="inputModel"
+    [type]="isPassword && (showPassword ? 'text' : 'password')"
+    [ngStyle]="{ 'background-color': 'var(--border)' }"
+    (ngModelChange)="inputModelChange.emit(inputModel)"
+    [disabled]="disabled"
+  />
+  <button
+    data-cy="toggle-password"
+    *ngIf="isPassword"
+    type="button"
+    tabindex="-1"
+    (click)="showPassword = !showPassword"
+    class="toggle-password p-0 m-0"
+  >
+    <mat-icon>{{ showPassword ? "visibility" : "visibility_off" }}</mat-icon>
+  </button>
+</div>

@@ -15,29 +15,25 @@ p {
 }
 
 .card-header {
-    height: 50%;
-    width: 100%;
-}
-
-.card {
-    border: 2px solid #000;
-}
-
-.logo {
     transition: all 0.1s linear;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 50px 0;
+    padding: 100px;
+    background-image: url('../../assets/img/thor.jpg'); /* caminho para sua imagem */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 
     p {
       font-size: 12px;
       font-weight: bold;
       color: var(--white);
     }
-  }
-  
-  .logo-img {
-    width: 40vh;
-  }
+
+}
+
+.card {
+    border: 2px solid #000;
+}
