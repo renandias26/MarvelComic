@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Router, RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
 import { IPages } from './interfaces/ipages';
@@ -10,6 +10,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from './app.routes';
+import { IConfig } from './interfaces/iconfig';
+import { ConfigService } from './services/config.service';
 
 @Component({
   selector: 'app-root',
@@ -19,17 +21,26 @@ import { AppRoutingModule } from './app.routes';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
+  config: IConfig = {
+    creators: '',
+    comics: '',
+    heroes: ''
+  };
   pages: IPages[] = PAGES;
   closeIcon: IconProp = faTimes;
   doubleLeftIcon: IconProp = faAngleDoubleLeft;
 
   constructor(
-    public sidebar: SidebarService
+    public sidebar: SidebarService,
     ) { }
 
 
   showPages(): IPages[] {
       return this.pages;
   }
-  title = 'marvelComics';
+
+
+    title = 'marvelComics';
+
 }
+
